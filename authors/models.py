@@ -50,7 +50,7 @@ class MyUserModel(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['firstname', 'lastname', 'email']
 
     objects = UserManager()
-
+        
     def __str__(self):
         return self.username
 
