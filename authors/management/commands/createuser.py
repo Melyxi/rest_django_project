@@ -14,7 +14,6 @@ User = get_user_model()
 
 
 def validateEmail(email):
-
     try:
         validate_email(email)
         return True
