@@ -1,45 +1,41 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom'
 
-const AuthorItem = ({author}) => {
+const ProjectItem = ({project}) => {
    return (
        <tr>
            <td>
-               {author.firstname}
+              <Link to={`projects/${project.id}`}>{project.name}</Link>
            </td>
            <td>
-               {author.lastname}
-           </td>
-           <td>
-               {author.email}
+               {project.data_at}
            </td>
        </tr>
    )
 }
 
 
-const AuthorList = ({authors}) => {
+const ProjectList = ({projects}) => {
+
    return (
        <table class="table">
        <thead>
           <tr>
            <th scope="col">
-               Имя
+               Название проекта
            </th>
            <th scope="col">
-               Фамилия
-           </th>
-           <th scope="col">
-               email
+               Время создания
            </th>
           </tr>
          </thead>
          <tbody>
-            {authors.map((a) => <AuthorItem author={a} />)}
+            {projects.map((a) => <ProjectItem project={a} />)}
           </tbody>
        </table>
    )
 }
 
 
-export default AuthorList
+export default ProjectList

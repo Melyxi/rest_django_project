@@ -11,7 +11,7 @@ class ToDoSerializer(serializers.ModelSerializer):
         model = ToDo
         fields = '__all__'
 
-class ProjectSerializer(HyperlinkedModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     users = AuthorSerializer(many=True)
     class Meta:
         model = Project
