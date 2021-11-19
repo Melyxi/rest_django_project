@@ -13,6 +13,7 @@ const AuthorItem = ({author}) => {
            <td>
                {author.email}
            </td>
+
        </tr>
    )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom'
 
-const ProjectItem = ({project}) => {
+const ProjectItem = ({project, deleteProject}) => {
    return (
        <tr>
            <td>
@@ -11,12 +11,15 @@ const ProjectItem = ({project}) => {
            <td>
                {project.data_at}
            </td>
+           <td>
+                <button onClick={() => deleteProject(project.id)} type="button" class="btn btn-danger" >Удалить</button>
+           </td>
        </tr>
    )
 }
 
 
-const ProjectList = ({projects}) => {
+const ProjectList = ({projects, deleteProject}) => {
 
    return (
        <table class="table">
@@ -28,12 +31,19 @@ const ProjectList = ({projects}) => {
            <th scope="col">
                Время создания
            </th>
+           <th scope="col">
+
+           </th>
           </tr>
          </thead>
          <tbody>
-            {projects.map((a) => <ProjectItem project={a} />)}
+
+            {projects.map((a) => <ProjectItem project={a} deleteProject={deleteProject}/>)}
           </tbody>
+          <Link class="btn btn-primary" to='projects/create'>Создать</Link>
        </table>
+
+
    )
 }
 

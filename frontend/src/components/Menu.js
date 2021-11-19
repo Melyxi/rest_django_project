@@ -6,6 +6,7 @@ import '../App.css';
 
 
 function MenuIndex() {
+
        return (
 
            <div class="p-3 bg-dark text-white">
@@ -28,7 +29,13 @@ function MenuIndex() {
                 </form>
 
                 <div class="text-end">
-                  <button type="button" class="btn btn-outline-light me-2">Login</button>
+                               { this.props.isAuthenticated() ?
+                                    <button class="btn btn-outline-light me-2" onClick={()=>this.props.logout()}>Logout</button> :
+                                    <Link to='/login'>Login</Link>
+                                }
+
+
+
                   <button type="button" class="btn btn-warning">Sign-up</button>
                 </div>
               </div>
