@@ -13,6 +13,7 @@ const AuthorItem = ({author}) => {
            <td>
                {author.email}
            </td>
+
        </tr>
    )
 }
@@ -35,7 +36,7 @@ const AuthorList = ({authors}) => {
           </tr>
          </thead>
          <tbody>
-           {authors.map((a) => <AuthorItem author={a} />)}
+            {authors.map((a) => <AuthorItem author={a} />)}
           </tbody>
        </table>
    )
